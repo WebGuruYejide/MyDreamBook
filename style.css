@@ -5,7 +5,495 @@
 :after {
     box-sizing: border-box;
 }
+/* ===================== 
+   Site.cs 
+   ===================== */
 
+body {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Tabs */
+#cc-paypal {
+  display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+  border-bottom: solid 3px #457bd3;
+}
+#cc-paypal.nav-pills > li {
+  flex-basis: 50%;
+  text-align: center;
+}
+#cc-paypal.nav-pills > li > a {
+  border: solid 1px #ddd;
+  border-radius: 0;
+  /*background: transparent;*/
+  position: relative;
+  opacity: 0.8;
+}
+#cc-paypal.nav-pills > li.active > a,
+#cc-paypal.nav-pills > li.active > a:focus,
+#cc-paypal.nav-pills > li.active > a:hover {
+  background: #457bd3;
+  border-color: #457bd3;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  opacity: 1;
+}
+/* #cc-paypal.nav-pills > li.active > a:before {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  margin-left: -12px;
+  border-top: solid 12px #ccc;
+  border-left: solid 12px transparent;
+  border-right: solid 12px transparent;
+  width: 12px;
+  height: 12px;
+}
+#cc-paypal.nav-pills > li.active > a:after {
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  margin-left: -11.5px;
+  border-top: solid 11px #fff;
+  border-left: solid 11px transparent;
+  border-right: solid 11px transparent;
+  width: 11px;
+  height: 12px;
+} */
+#cc-paypal.nav {
+    margin-bottom: 20px;
+}
+#cc-paypal.nav > li > a > img.img-creditcards,
+#cc-paypal.nav > li > a > img.img-paypal {
+  height: 34px;
+}
+#cc-paypal .tab-content {
+  margin-top: 30px;
+}
+#paypal-button {
+    position: relative;
+    /*left: 50%;
+    margin-left: -60px;*/
+    margin-bottom: 20px;
+}
+.warning-paypal {
+    text-align: center;
+    color: red;
+}
+.disable-click {
+    pointer-events:none;
+}
+li.disable-click.selectedOption > div {
+    background-color: #B8DDB4; 
+}
+.disable-click div, a.disable-click {
+    background-color: #EEE;
+}
+
+.success-paypal {
+    text-align: center;
+    color: limegreen;
+}
+/*@media(max-width:981px){
+    #paypal-button {
+        margin-left: -145px;
+    }
+}
+@media(max-width:767px){
+    #paypal-button {
+        left: 0;
+        margin-left: 215px;
+    }
+}*/
+
+
+/* ===================== 
+   SingleClient.cs 
+   ===================== */
+.form-group {
+  position: relative;
+  font-size: 18px;
+}
+.form-group input, .form-group select {
+  height: 40px;
+}
+.form-group input[type="radio"] {
+  height: 18px;
+}
+.form-group label {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 8px;
+  background: #fff;
+  -moz-transition: all 100ms ease-in-out;
+  -o-transition: all 100ms ease-in-out;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
+}
+.form-group label.moveUp {
+    top: -10px;
+    font-size: 16px;
+    font-weight: 600;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+.form-group label.stayUp {
+    top: -10px;
+    font-size: 16px;
+    font-weight: 600;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+.terms-label {
+  position: absolute;
+  top: -10px;
+  left: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 8px;
+  background: #fff;
+}
+.center-text {
+    text-align: center;
+}
+.img-fluid {
+    max-width: 100%; 
+    height: auto;
+}
+.efund_title {
+    text-align: center;
+}
+.eFund_ErrorMessage {
+    color: red;
+}
+.efund_container {
+	font-family: 'Open Sans', sans-serif;
+	font-weight:300;	
+}
+.efund_h2 {
+	font-weight:700;
+	font-size:25px;	
+	color:#333;
+	padding-bottom:10px;
+	border-bottom:#CCCACA 1px solid;
+    margin:inherit;
+    margin-bottom:10px;
+    margin-top:20px;
+    line-height:1.1;
+    font-family:inherit;
+}
+.efund_h3 {
+	font-size:20px;
+	color:#2e6da4;
+	font-weight:400;
+}
+.efund_hr {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px;
+}
+.efund_submit {
+    width: 80%; 
+    max-width: 300px;
+}
+.efund_PaymentOptionList {
+    padding-left: 0px;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.efund_PaymentOptionItem,
+.efund_PaymentOptionOther {
+    display: block;
+    list-style-type: none;
+}
+.efund_PaymentOptionItem {
+    width: 100px;
+}
+.efund_PaymentOptionItem > div,
+.efund_PaymentOptionOther > div {
+    margin: 0 3px 10px;
+    height: 44px;
+}
+.efund_PaymentOptionItem div {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.6;
+    padding: 6px 0;
+    border: 1px solid #457bd3;
+    border-radius: 4px;
+    line-height: 32px;
+    cursor: pointer;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+.efund_PaymentOptionItem.selectedOption div {
+    background-color: #457bd3;
+    color: #fff;
+    opacity: 1;
+    -moz-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+.efundForm .form-group.ccErrorMsg::after {
+    content: 'Please enter a valid credit card number';
+    color: red;
+}
+
+
+.efundForm .panel-body .row {
+  margin-left: -3px;
+  margin-right: -3px;
+}
+.efundForm .panel-body .efund_form_col {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.efundForm .form-group {
+  margin-bottom: 11px;
+}
+.efundForm .form-control {
+  font-size: 16px;
+/*   margin-bottom: 10px; */
+  height: 44px;
+}
+.efundForm small {
+/*   margin-bottom: 10px; */
+}
+.efundForm textarea.form-control {
+  height: auto;
+}
+.form-group label {
+  top: 10px;
+}
+
+.efundForm .efund_tab_group {
+  display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+  border-bottom: solid 3px #457bd3;
+}
+.efundForm .efund_tab_group > .btn {
+  -ms-flex-positive: 1;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+  border-radius: 0;
+  border-bottom: none;
+  opacity: 0.7;
+}
+.efundForm .efund_tab_group > .btn + .btn {
+/*   border-left: solid 1px #ddd; */
+}
+.efundForm .efund_tab_group > .btn:disabled {
+  opacity: 1;
+  background: #457bd3;
+  border-color: #457bd3;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  color: #fff;
+  font-weight: 700;
+}
+
+#efund_recurring_btns {
+  display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+  -webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+#efund_recurring_btns .btn {
+  opacity: 0.6;
+  border-color: #457bd3;
+  width: 100%;
+/*   margin-bottom: 10px; */
+  padding: 6px;
+  height: 44px;
+  border-radius: 0;
+}
+#efund_recurring_btns .btn-wrapper:first-child .btn {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+#efund_recurring_btns .btn-wrapper.last .btn {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+#efund_recurring_btns .btn:disabled {
+  background-color: #457bd3;
+  color: #fff;
+  opacity: 1;
+}
+#efund_recurring_btns .efund_RecurringDonation {
+  padding-top: 10px;
+}
+#efund_recurring_btns .efund_RecurringDonation .form-group {
+  margin: 0 3px 10px;
+}
+
+.efundForm h5 {
+  font-weight: 700;
+  margin-top: 5px;
+/*   line-height: 1.5em;
+  border-bottom: solid 1px #ddd; */
+}
+.efundForm .panel-body .no-gutter-row .efund_form_col {
+  padding-left: 0;
+  padding-right: 0;
+}
+.efundForm .panel-body .no-gutter-row .efund_form_col:first-child {
+  padding-left: 3px;
+}
+.efundForm .panel-body .no-gutter-row .efund_form_col:last-child {
+  padding-right: 3px;
+}
+.efundForm .panel-body .no-gutter-row .efund_form_col .form-control {
+  border-radius: 0;
+  border-right: solid 0.5px #eee;
+  border-left: solid 0.5px #eee;
+}
+.efundForm .panel-body .no-gutter-row .efund_form_col:first-child .form-control {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-left: solid 1px #ccc;
+}
+.efundForm .panel-body .no-gutter-row .efund_form_col:last-child .form-control {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: solid 1px #ccc;
+}
+.checkbox-group {
+  display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+  -webkit-align-items: center;
+	align-items: center;
+}
+.checkbox-group input[type=checkbox] {
+  margin: 0 0 5px;
+}
+.efund_terms {
+  margin-top: 10px;
+}
+.efund_terms .panel-body {
+  height: 120px;
+  overflow: scroll;
+}
+
+.efund_submit {
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 500px) {
+/*   .efundForm .efund_tab_group {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .efundForm .efund_tab_group > .btn {
+    width: 90px;
+    flex-grow: 0;
+  } */
+}
+@media (max-width: 400px) {
+  #cc-paypal.nav > li > a > img.img-creditcards,
+  #cc-paypal.nav > li > a > img.img-paypal {
+    height: 25px;
+  }
+}
+
+/* ===================== 
+   Paypal Button Inline Styling 
+   ===================== */
+#zoid-paypal-button-24d207063a {
+  font-size: 0;
+  width: 100%;
+  overflow: hidden;
+  min-width: 75px;
+}
+
+#zoid-paypal-button-24d207063a.paypal-button-size-responsive {
+  text-align: center;
+}
+
+#zoid-paypal-button-24d207063a > .zoid-outlet {
+  display: inline-block;
+  min-width: 75px;
+  max-width: 750px;
+  position: relative;
+}
+
+#zoid-paypal-button-24d207063a.paypal-button-layout-vertical > .zoid-outlet {
+  min-width: 75px;
+}
+
+#zoid-paypal-button-24d207063a > .zoid-outlet {
+  width:  150px;
+  height: 25px;
+}
+
+#zoid-paypal-button-24d207063a.paypal-button-size-responsive > .zoid-outlet {
+  width: 100%;
+}
+
+#zoid-paypal-button-24d207063a > .zoid-outlet > iframe {
+  min-width: 100%;
+  max-width: 100%;
+  width: 75px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#zoid-paypal-button-24d207063a > .zoid-outlet > iframe.zoid-component-frame {
+  z-index: 100;
+}
+
+#zoid-paypal-button-24d207063a > .zoid-outlet > iframe.zoid-prerender-frame {
+  transition: opacity .2s linear;
+  z-index: 200;
+}
+
+#zoid-paypal-button-24d207063a > .zoid-outlet > iframe.zoid-visible {
+  opacity: 1;
+}
+
+#zoid-paypal-button-24d207063a > .zoid-outlet > iframe.zoid-invisible {
+  opacity: 0;
+  pointer-events: none;
 body {
     background-color: #1d1f20;
     color: #e5e5e5;
